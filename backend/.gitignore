@@ -1,0 +1,34 @@
+# Backend-specific gitignore (mirrors root, belt-and-suspenders)
+
+# Runtime state
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+quantumshield.db
+
+# Cryptographic key material — NEVER commit private keys
+keys/ca/ca_private.bin
+keys/ca/ca_public.bin
+keys/server/kem_secret.bin
+keys/server/kem_public.bin
+keys/professors/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Env / secrets
+.env
+.env.*
+# Allow the example template — it contains no real secrets
+!.env.example
+
+# Dev scratch
+append.py
+
+# Logs
+*.log

@@ -1,0 +1,88 @@
+# ===========================
+# QuantumShield — .gitignore
+# ROOT LEVEL
+# ===========================
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Environment / secrets
+.env
+.env.*
+*.env
+# Allow the example template — it contains no real secrets
+!.env.example
+!**/.env.example
+
+# SQLite databases (runtime state — not source)
+*.db
+*.sqlite
+*.sqlite3
+
+# Backend: runtime-generated upload artefacts
+# (ciphertext blobs, encrypted PDFs, stale kyber secret files)
+backend/uploads/
+uploads/
+
+# Backend: cryptographic key material — NEVER commit
+backend/keys/ca/ca_private.bin
+backend/keys/ca/ca_public.bin
+backend/keys/server/kem_secret.bin
+backend/keys/server/kem_public.bin
+backend/keys/professors/
+
+# Keep the keys/ directory stub in git but not actual key files
+!backend/keys/.gitkeep
+
+# Node / frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Compiled Python extensions
+*.so
+
+# Distribution / packaging
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Test/coverage artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Scratch file left over from dev
+backend/append.py
